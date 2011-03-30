@@ -67,7 +67,7 @@ endif
 set guioptions-=T
 
 " Default gui color scheme
-color ir_black
+color ryderbeans
 
 " ConqueTerm wrapper
 function StartTerm()
