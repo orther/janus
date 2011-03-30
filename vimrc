@@ -15,6 +15,10 @@ set softtabstop=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
+" Retain visual block after indenting with < or >
+vmap > >gv
+vmap < <gv
+
 " Searching
 set hlsearch
 set incsearch
