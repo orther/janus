@@ -34,7 +34,7 @@ set laststatus=2
 set noequalalways
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
