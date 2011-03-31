@@ -41,7 +41,7 @@ set noequalalways
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$']
 map <Leader>n :NERDTreeToggle<CR>
 
-" Movement between split viewports
+" Movement between split windows
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
@@ -51,6 +51,37 @@ inoremap <C-h> <Esc><C-w>h
 inoremap <C-j> <Esc><C-w>j
 inoremap <C-k> <Esc><C-w>k
 inoremap <C-l> <Esc><C-w>l
+
+" Swap window buffers.
+function! SwapWindowBuffers()
+    if !exists("g:markedWinNum")
+        " set window marked for swap
+        let g:markedWinNum = winnr()
+        :echo "window marked for swap"
+    else
+        " mark destination
+        let curNum = winnr()
+        let curBuf = bufnr( "%" )
+        if g:markedWinNum == curNum
+            :echo "window unmarked for swap"
+        else
+            exe g:markedWinNum . "wincmd w"
+            " switch to source and shuffle dest->source
+            let markedBuf = bufnr( "%" )
+            " hide and open so that we aren't prompted and keep history
+            exe 'hide buf' curBuf
+            " switch to dest and shuffle source->dest
+            exe curNum . "wincmd w"
+            " hide and open so that we aren't prompted and keep history
+            exe 'hide buf' markedBuf 
+            :echo "windows swapped"
+        endif
+        " unset window marked for swap
+        unlet g:markedWinNum
+    endif
+endfunction
+
+noremap <leader><C-s> :call SwapWindowBuffers()<CR>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
