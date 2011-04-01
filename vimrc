@@ -15,6 +15,15 @@ set softtabstop=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
+" Trailing space removal on save
+function! StripTrailingSpaces()
+    let l = line(".")
+    let c = col(".")
+    silent! execute '%s/\s\+$//e'
+    call cursor(l, c)
+endfunction
+au BufWritePre * :call StripTrailingSpaces()
+
 " Retain visual block after indenting with < or >
 vmap > >gv
 vmap < <gv
