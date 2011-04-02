@@ -82,7 +82,7 @@ function! SwapWindowBuffers()
             " switch to dest and shuffle source->dest
             exe curNum . "wincmd w"
             " hide and open so that we aren't prompted and keep history
-            exe 'hide buf' markedBuf 
+            exe 'hide buf' markedBuf
             :echo "windows swapped"
         endif
         " unset window marked for swap
@@ -130,8 +130,8 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
-" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python  set tabstop=4 textwidth=79
+" make python use 4 spaces and have a 120 max char width
+au FileType python set tabstop=4 textwidth=119
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
