@@ -34,7 +34,7 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Tab completion
+" Tab completion for command line
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,*.class,.svn,vendor/gems/*
 
@@ -120,10 +120,10 @@ function s:setupMarkup()
 endfunction
 
 " make uses real tabs
-au FileType make                                     set noexpandtab
+au FileType make set noexpandtab
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
@@ -141,36 +141,36 @@ filetype plugin indent on
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+" map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+"map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+"cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Unimpaired configuration
 " Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
+"nmap <C-Up> [e
+"nmap <C-Down> ]e
 " Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
+"vmap <C-Up> [egv
+"vmap <C-Down> ]egv
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 
 " gist-vim defaults
-if has("mac")
-  let g:gist_clip_command = 'pbcopy'
-elseif has("unix")
-  let g:gist_clip_command = 'xclip -selection clipboard'
-endif
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
+"if has("mac")
+"  let g:gist_clip_command = 'pbcopy'
+"elseif has("unix")
+"  let g:gist_clip_command = 'xclip -selection clipboard'
+"endif
+"let g:gist_detect_filetype = 1
+"let g:gist_open_browser_after_post = 1
 
 " Use modeline overrides
 set modeline
@@ -190,7 +190,7 @@ let g:JSLintHighlightErrorLine = 0
 " let macvim_hig_shift_movement = 1
 
 " % to bounce from do to end etc.
-runtime! macros/matchit.vim
+"runtime! macros/matchit.vim
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
