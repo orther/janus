@@ -48,8 +48,8 @@ map <leader>f :echo $PWD<CR>
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$']
 map <Leader>n :NERDTreeToggle<CR>
 
-" open new tab on ctrl+t
-noremap <C-t> :tabnew<CR>
+" open new tab and create split it layout on ctrl+t
+noremap <C-t> :tabnew<CR>:SplitItLayout<CR>
 
 " Movement between split windows
 noremap <C-h> <C-w>h
