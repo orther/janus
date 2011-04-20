@@ -10,24 +10,13 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CommandT<CR>
 
-  let g:CommandTAcceptSelectionMap='<C-t>'
-  let g:CommandTAcceptSelectionVSplitMap='<CR>'
+  let g:CommandTAcceptSelectionMap='<CR>'
 
   " Command-Return for fullscreen
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
   " Command-Shift-F for Ack
   map <D-F> :Ack<space>
-
-  " Command-e for ConqueTerm
-  map <D-e> :call StartTerm()<CR>
-
-  " Command-/ to toggle comments
-  map <D-/> <plug>NERDCommenterToggle<CR>
-
-  " Command-][ to increase/decrease indentation
-  vmap <D-]> >gv
-  vmap <D-[> <gv
 
   " Map Command-# to switch tabs
   map  <D-0> 0gt
