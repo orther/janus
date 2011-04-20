@@ -175,7 +175,7 @@ set modeline
 set modelines=10
 
 " Default color scheme
-color ryderbeans
+color pablo
 
 " Directories for swp files
 set backupdir=~/.vim/backup
