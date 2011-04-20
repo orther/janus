@@ -41,8 +41,8 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,*.class,.svn,vendor/gems/*
 " Always show status bar
 set laststatus=2
 
-" show pwd of current
-map <leader>f :echo $PWD<CR>
+" show pwd of current load along with the current time
+map <leader>f :echo strftime('%a, %b %e %I:%M %p') '::' $PWD<CR>
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$']
