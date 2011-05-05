@@ -24,9 +24,6 @@ function! StripTrailingSpaces()
 endfunction
 au BufWritePre * :call StripTrailingSpaces()
 
-" map <leader> to ,
-let mapleader = ","
-
 " Retain visual block after indenting with < or >
 vmap > >gv
 vmap < <gv

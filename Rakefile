@@ -195,8 +195,8 @@ end
 #    VIM
 #  end
 #end
-vim_plugin_task "ryderbeans" do
-  sh "curl https://gist.github.com/raw/660525/451f3d81a4cbc98402d608dac274ae819a2bf6ee/ryderbeans.vim > colors/ryderbeans.vim"
+vim_plugin_task "custombeans" do
+  sh "curl https://github.com/orther/janus/raw/master/custombeans.vim > colors/custombeans.vim"
 end
 #vim_plugin_task "molokai" do
 #  sh "curl https://github.com/mrtazz/molokai.vim/raw/master/colors/molokai.vim > colors/molokai.vim"

@@ -59,7 +59,7 @@ endif
 set guioptions-=T
 
 " Default gui color scheme
-color ryderbeans
+colors custombeans
 
 " ConqueTerm wrapper
 function StartTerm()
