@@ -6,6 +6,9 @@ if has("gui_macvim")
   " disable MacVim's bells and whistles
   set vb
 
+  " set font and size
+  set guifont=Menlo:h10
+
   " Command-T for CommandT
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CommandT<CR>
