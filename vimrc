@@ -49,7 +49,7 @@ let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " open new tab and create split it layout on ctrl+t
-noremap <C-t> :tabnew<CR>:SplitItLayout<CR>
+noremap <C-t> :tabnew<CR>:SplitItAutoLayout<CR>
 
 " Movement between split windows
 noremap <C-h> <C-w>h
